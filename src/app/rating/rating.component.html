@@ -1,0 +1,15 @@
+<div class="text-warning mb-1 me-2">
+  @for (star of stars; track $index) {
+    @if (star === 1) {
+      <i class='bi bi-star-fill'></i>
+    }@else if (star === 0.5) {
+      <i class="bi bi-star-half"></i>
+    }@else {
+      <i class="bi bi-star"></i>
+    }
+  }
+  <span class="ms-1">
+   {{rating}}
+  </span>
+</div>
+
