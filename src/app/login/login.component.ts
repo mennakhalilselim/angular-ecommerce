@@ -10,4 +10,14 @@ import { FormsModule } from '@angular/forms';
 })
 export class LoginComponent {
 
+  handleLogin(loginForm:any){
+    console.log(loginForm);
+    console.log(loginForm.value);
+    // console.log(loginEmail);
+  }
+
+  // handleEmail(loginEmail: any){
+  //   console.log(loginEmail);
+  // }
+
 }
