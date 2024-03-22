@@ -1,24 +1,78 @@
-<!-- <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" required email name="email" ngModel #loginEmail="ngModel">
-    @if (loginEmail.touched && loginEmail.invalid) {
-      @if (loginEmail.errors?.['required']) {
-        <div id="emailHelp" class="form-text text-danger">this field is required</div>
-      } @if (loginEmail.errors?.['email']) {
-        <div id="emailHelp" class="form-text text-danger">enter a valid email</div>
-      }
-    }
-  </div>
+<div class="w-50 m-auto p-5">
+  <form [formGroup]="registerForm" (ngSubmit)="handleRegister()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+      />
+      @if (registerForm.controls['name'].touched &&
+      registerForm.controls['name'].invalid) { @if
+      (registerForm.controls['name'].errors?.['required']) {
+      <div class="form-text text-danger">this field is required</div>
+      } }
+    </div>
 
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" required name="email" ngModel #loginPassword="ngModel">
-    @if (loginPassword.touched && loginPassword.invalid) {
-      @if (loginPassword.errors?.['required']) {
-        <div id="emailHelp" class="form-text text-danger">this field is required</div>
-      }
-    }
-  </div>
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
-</form> -->
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        formControlName="email"
+      />
+      @if (registerForm.controls['email'].touched &&
+      registerForm.controls['email'].invalid) { @if
+      (registerForm.controls['email'].errors?.['required']) {
+      <div class="form-text text-danger">this field is required</div>
+      } @if (registerForm.controls['email'].errors?.['email']) {
+      <div class="form-text text-danger">enter a valid email</div>
+      } }
+    </div>
+
+    <div class="mb-3">
+      <label for="username" class="form-label">Username</label>
+      <input
+        type="text"
+        class="form-control"
+        id="username"
+        formControlName="username"
+      />
+      @if (registerForm.controls['username'].touched &&
+      registerForm.controls['username'].invalid) { @if
+      (registerForm.controls['username'].errors?.['required']) {
+      <div class="form-text text-danger">this field is required</div>
+      } @if (registerForm.controls['username'].errors?.['pattern']) {
+      <div class="form-text text-danger">
+        username should contains only small letters, numbers, period
+      </div>
+      } }
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        formControlName="password"
+      />
+      @if (registerForm.controls['password'].touched &&
+      registerForm.controls['password'].invalid) { @if
+      (registerForm.controls['password'].errors?.['required']) {
+      <div class="form-text text-danger">this field is required</div>
+      } @if (registerForm.controls['password'].errors?.['pattern']) {
+      <div class="form-text text-danger">
+        password length not less than 8 characters , contains at least one
+        lowercase , one uppercase , at least one digit and special character
+      </div>
+      } }
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <p>Already have an account! <a routerLink="/login">login</a></p>
+      <button type="submit" class="btn btn-primary px-5">Register</button>
+    </div>
+  </form>
+</div>
