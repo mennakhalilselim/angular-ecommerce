@@ -22,7 +22,9 @@
         price: {{ product.price }} <br>
         rating: {{ product.rating}}
       </p>
-      <a href="#" class="btn btn-primary shadow-0" (click)="handleAddToCart(product)" >Add to cart </a>
+      @if (!existInCart(product)) {
+        <a href="#" class="btn btn-primary shadow-0" (click)="handleAddToCart(product)" >Add to cart </a>
+      }
     </div>
   </div>
 

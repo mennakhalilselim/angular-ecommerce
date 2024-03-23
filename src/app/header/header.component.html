@@ -36,13 +36,16 @@
           <a class="nav-link" routerLink="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Cart</a>
+          <a class="nav-link position-relative" routerLink="cart" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+            Cart
+            <span class="position-absolute top-1 start-100 translate-middle badge rounded-pill bg-danger">
+              {{cartItemsCount}}
+              <!-- <span class="visually-hidden">unread messages</span> -->
+            </span>
+
+          </a>
         </li>
       </ul>
-      <!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
     </div>
   </div>
 </nav>
