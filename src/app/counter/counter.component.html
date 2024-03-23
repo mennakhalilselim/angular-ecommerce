@@ -1,0 +1,14 @@
+<div class="row mb-4">
+  <div class="col-md-4 col-6 mb-3">
+    <label class="mb-2 d-block">Quantity</label>
+    <div class="input-group mb-3" style="width: 170px;">
+      <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon1" data-mdb-ripple-color="dark" (click)="decreaseCounter()">
+        <i class="bi bi-dash-lg"></i>
+      </button>
+      <input type="text" class="form-control text-center border border-secondary" [value]="counter"/>
+      <button class="btn btn-white border border-secondary px-3" type="button" id="button-addon2" data-mdb-ripple-color="dark" (click)="increaseCounter()">
+        <i class="bi bi-plus-lg"></i>
+      </button>
+    </div>
+  </div>
+</div>

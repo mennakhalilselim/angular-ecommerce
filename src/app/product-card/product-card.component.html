@@ -1,7 +1,9 @@
-<a [routerLink]="['product-details', product.id]" class="text-decoration-none">
+
 
   <div class="card h-100">
-    <img [src]="product.thumbnail" class="card-img-top w-100 h-50" alt="..." />
+    <!-- <a [routerLink]="['product-details', product.id]" class="text-decoration-none"> -->
+    <img [src]="product.thumbnail" class="card-img-top w-100 h-50" alt="..." [routerLink]="['product-details', product.id]"/>
+  <!-- </a> -->
     <div class="card-body">
       <!-- <i class="fa-solid fa-star" [ngStyle]="{'color': product.is_verified? 'green' : 'red' }"></i> -->
       <div class="d-flex align-items-baseline justify-content-between">
@@ -20,7 +22,7 @@
         price: {{ product.price }} <br>
         rating: {{ product.rating}}
       </p>
-      <a href="#" class="btn btn-primary shadow-0"> <i class="me-1 fa fa-shopping-basket"></i> Add to cart </a>
+      <a href="#" class="btn btn-primary shadow-0" (click)="handleAddToCart(product)" >Add to cart </a>
     </div>
   </div>
-</a>
+
